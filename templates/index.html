@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreality Scrapped for Luxonis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .ad-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .ad-card {
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .ad-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .ad-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>500 flats images scrapped -Luxonis</h1>
+    <div class="ad-container">
+        {% for ad in ads %}
+            <div class="ad-card">
+                <div class="ad-title">{{ ad[0] }}</div>
+                <img class="ad-image" src="{{ ad[1] }}" alt="{{ ad[0] }}">
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

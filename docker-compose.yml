@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile.scraper
+    volumes:
+      - ./sreality.db:/app/sreality.db
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - "8080:5000"
+    depends_on:
+      - scraper
